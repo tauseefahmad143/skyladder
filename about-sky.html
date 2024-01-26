@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="ladder.png">
+    <title>www.skyladder.com</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #696464;
+            font-family: monospace;
+            overflow: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(129, 227, 240);
+            background-color: rgba(94, 86, 86, 0.3);
+            font-size: 35px;
+            margin-top: 500px;
+            text-decoration: 2px underline red;
+        }
+
+        .homepage {
+            background-image: url(aboutimage.jpg);
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+        }
+
+        header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            /* position: fixed; */
+            /* position: fixed; */
+            background-color: rgb(223, 15, 15);
+            border-bottom-left-radius: 13px;
+            border-bottom-right-radius: 13px;
+            width: 100%;
+            margin-top: 0px;
+        }
+
+        .logo {
+            margin: 10px;
+            margin-left: 20px;
+            transition: all 0.5s;
+        }
+
+        .logo img {
+            width: 50px;
+            border-radius: 50%;
+            outline: 1px solid crimson;
+        }
+
+        .logo span {
+            font-size: 30px;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .logo span1 {
+            font-size: 20px;
+            font-weight: 500;
+            color: white;
+        }
+
+        .logo:hover {
+            transition: all 0.5s;
+            text-shadow: 10px 10px 40px rgb(14, 5, 5);
+            scale: 1.05;
+        }
+
+        .menu {
+            display: flex;
+            text-align: center;
+        }
+
+        .menu li {
+            list-style: none;
+            padding: 26px 10px;
+            font-size: 22px;
+            transition: all 0.3s;
+            margin-right: 15px;
+            font-size: 22px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+
+        .dropdown {
+            position: relative;
+            display: block;
+        }
+
+        .dropdown .icon {
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover .icon {
+            transform: rotate(180deg);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            /* display: none; */
+            padding: 5px 10px;
+            text-decoration: none;
+            text-align: left;
+            border-radius: 5px;
+            top: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-content {
+            font-size: 17px;
+            position: absolute;
+            width: 100%;
+            top: 100%;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            display: none;
+        }
+
+
+        .dropdown-content .content-icon {
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            padding-left: 15px;
+        }
+
+        .dropdown-content a:hover .content-icon {
+            opacity: 1;
+            margin-right: 5px;
+            display: inline-block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgb(224, 70, 70);
+            display: block;
+            padding-right: 0.5px;
+        }
+
+        .dropdown-content:hover {
+            display: block;
+        }
+
+        footer {
+            font-size: 20px;
+            background-color: black;
+            color: white;
+            width: 100%;
+            /* height: 40px; */
+            border-top: 1px solid rgb(61, 53, 61);
+            text-align: center;
+        }
+
+        footer span {
+            color: rgb(180, 176, 176);
+            /* line-height: 40px; */
+            /* padding-left: 40px; */
+        }
+
+        .aboutself {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            font-size: 20px;
+            /* justify-content: space-evenly; */
+            /* padding: 10px; */
+        }
+
+        .aboutself .p1,
+        .p2,
+        .p3 {
+            width: 50%;
+            /* padding: 20px; */
+        }
+
+        .aboutself p,
+        h2 {
+            /* width: 50%; */
+            padding: 8px;
+        }
+
+        .p2 p {
+            padding: 8px;
+        }
+
+        .p3 p {
+            padding: 8px;
+        }
+
+        .p1 {
+            background-color: #616060;
+            color: #dbd5d5;
+        }
+
+        .p2 {
+            background-color: #997c7c;
+            color: #dbd5d5;
+        }
+
+        .p3 {
+            display: flex;
+            flex-direction: column;
+            color: rgb(201, 199, 199);
+        }
+
+        .p3 img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .p3-allayment {
+            padding-left: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .detail {
+            padding-left: 10px;
+            line-height: 30px;
+        }
+
+        .box img {
+            border-radius: 10px;
+            border: 2px solid rgb(0, 0, 0);
+        }
+
+        @media screen and (max-width:883px) {
+            header {
+                width: 100%;
+            }
+
+            .logo {
+                display: flex;
+            }
+
+            .logo span {
+                margin-top: 7px;
+                font-size: 25px;
+                font-weight: 600;
+                font-style: italic;
+            }
+
+            .logo span1 {
+                margin-top: 16px;
+                font-size: 16px;
+                font-weight: 500;
+                color: white;
+            }
+
+            .logo img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .menu li {
+                padding: 3px;
+                margin: 0px;
+                vertical-align: bottom;
+                font-size: 10px;
+            }
+
+            .dropdown-content a {
+                font-size: 6px;
+            }
+            .dropdown-content{
+                width: 81px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .aboutself {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                font-size: 17px;
+                justify-content: space-evenly;
+            }
+
+            .aboutself .p1,
+            .p2,
+            .p3 {
+                width: 100%;
+            }
+            .aboutself h2{
+                text-align: center;
+            }
+
+            footer {
+                font-size: 16px;
+            }
+
+            .p3-allayment {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .p3-allayment img {
+                align-items: center;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <section class="homepage">
+        <header>
+            <div class="logo">
+                <img src="ladder.png" alt="">
+                <span>SKY</span>
+                <span1>Ladder</span1>
+            </div>
+            <div class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-sky.html">About Us</a></li>
+                <div class="dropdown">
+                    <li><a href="#">Our Services<i class="fa-solid fa-angle-down icon"></i></a></li>
+                    <div class="dropdown-content">
+
+                        <a href="ladders.html"><i class="fa-solid fa-angle-right content-icon"></i>Ladders</a>
+                        <a href="ladders-type.html"><i class="fa-solid fa-angle-right content-icon"></i>Ladders Type</a>
+                        <a href="constructions.html"><i class="fa-solid fa-angle-right content-icon"></i>Construction
+                            Work</a>
+                        <a href="fitouts.html"><i class="fa-solid fa-angle-right content-icon"></i>Aluminium Fitting</a>
+                        <a href="aluminum-types.html"><i class="fa-solid fa-angle-right content-icon"></i>Aluminium
+                            types</a>
+                    </div>
+                </div>
+                <!-- <li><a href="#">Our Projects</i></a></li> -->
+                <li><a href="contact.html">Contact Us</a></li>
+            </div>
+        </header>
+        <h1>About SKY Ladders</h1>
+    </section>
+    <div class="aboutself">
+        <div class="p1">
+            <h2><span>SKY Ladders</span></h2>
+            <p>Sky Aluminium Ladder Suppliers is a reputable company known for providing high-quality aluminum ladders
+                tailored to meet various needs. <br><br>
+                With a commitment to safety and durability, they have established themselves
+                as a trusted source for reliable climbing solutions.
+            </p>
+        </div>
+        <div class="p2">
+            <h2>Contact Information</h2>
+            <p>
+                For inquiries and orders, contact Sky Aluminium Ladder Suppliers at 90feet Road, Tilak Nagar, Sakinka
+                Mumbai
+                400072. <br><br>
+                Visit our website for a detailed view of their product catalog.
+            </p>
+        </div>
+
+        <div class="p3">
+            <h2>Owner Detail</h2>
+            <div class="p3-allayment">
+                <div class="box">
+                    <img src="image.png" alt="">
+                </div>
+                <div class="detail">Name:Mr Tauseef Khan <br>
+                    Work Profile:Manager <br>
+                    Contact:+91 9999999999 <br>
+                </div>
+            </div>
+            <p>
+                Your knowledge set your life perfect and good permanently... <br>
+                Increase your knowledge for your perfect life...
+            </p>
+        </div>
+    </div>
+    <footer>
+        <span>Tauseef_Khan Copyrights © 2024 | All Rights Reserved</span>
+    </footer>
+</body>
+
+</html>

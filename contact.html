@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="ladder.png">
+    <title>www.skyladder.com</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            /* background-color: #222; */
+            /* border-radius: 10px; */
+            margin: 0px;
+            padding: 0;
+            font-family: monospace;
+            background-color: #222;
+        }
+
+        .main {
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+            align-items: center;
+            /* width: 100%; */
+        }
+
+        .image {
+            width: 100%;
+        }
+        .image img {
+            background-image: url(giphy.gif);
+            background-repeat: no-repeat;
+            height: 55vh;
+            width: 100%;
+        }
+        .input-box {
+            background-color: rgba(170, 163, 163, 0.3);
+            color: white;
+            display: flex;
+            border-radius: 10px;
+            flex-direction: column;
+            box-shadow: 0px 0px 10px white;
+            padding: 10px;
+            width: 100%;
+            overflow: hidden;
+            object-fit: cover;
+            /* top: 220px; */
+            margin: 10px;
+        }
+
+        button {
+            transition: all 0.3s ease;
+            padding: 5px 15px;
+            background-color: red;
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+            outline: none;
+            margin: 5px;
+        }
+
+        button a,
+        i {
+            /* padding: 100%; */
+            text-decoration: none;
+            background-color: red;
+            color: white;
+        }
+
+        label {
+            background-color: rgba(170, 163, 163, 0.3);
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        input {
+            background-color: white;
+            /* width: 100%; */
+            padding: 4px 10px;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        select,
+        option {
+            background-color: white;
+            /* width: 100%; */
+            padding: 4px 10px;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .input-box button {
+            transition: all 0.3s ease;
+            font-size: 18px;
+            margin-top: 20px;
+            padding: 8px 15px;
+            width: 20%;
+            text-align: center;
+        }
+
+        button:hover {
+            scale: 0.9;
+            background-color: rgb(255, 0, 0);
+        }
+
+        button i {
+            color: white;
+        }
+
+        button:hover a,
+        i {
+            /* scale: 0.9; */
+            color: black;
+            /* font-size: 20px; */
+            background-color: rgb(255, 0, 0);
+        }
+
+        button:hover i {
+            /* scale: 0.9; */
+            color: black;
+            /* font-size: 20px; */
+            background-color: rgb(255, 0, 0);
+        }
+        a {
+            color: whitesmoke;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 5px 15px;
+            background-color:crimson;
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+            outline: none;
+            margin-top: 12px;
+            width: 60px;
+        }
+        a:hover{
+            scale: 0.9;
+            color: black;
+            /* font-size: 20px; */
+            background-color: rgb(255, 0, 0);
+        }
+
+        @media screen and (max-width:883px) {
+            .main {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .image img {
+               max-width: 100%;
+               /* max-height: 100%; */
+               height: 30vh;
+            }
+            .input-box{
+                width: 85%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <button><a href="index.html"><i class="fa-solid fa-house"></i>&nbsp;Back home</a></button>
+    <div class="main">
+        <div class="image">
+            <img src="giphy.gif" alt="">
+        </div>
+
+        <div class="input-box">
+            <label for="name">Enter your name:</label>
+            <input type="name" placeholder="enter your name" id="name">
+            <label for="email">E-mail:</label>
+            <input type="email" placeholder="enter your e-mail" id="email">
+            <label for="number">Phone number:</label>
+            <input type="number" placeholder="enter your phone number" id="number">
+            <label for="car">City:</label>
+            <select id="car" name="car">
+                <option value="" disabled selected>Select an option</option>
+                <option value="mum">Mumbai</option>
+                <option value="plg">Palghar</option>
+                <option value="krj">Karjat</option>
+                <option value="pnl">Panvel</option>
+                <option value="pne">Pune</option>
+                <option value="nsk">Nashik</option>
+                <option value="Nmm">Navi Mumbai</option>
+            </select>
+            <a href="#">Submit</a>
+        </div>
+    </div>
+</body>
+
+</html>
